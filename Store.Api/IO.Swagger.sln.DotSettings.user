@@ -1,0 +1,12 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6933e421_002Def3f_002D4463_002D9361_002De7c6adcb8aa2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Get_List_Of_Books" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::D58D6FE2-A85D-402A-8F48-671BCDA14595::.NETCoreApp,Version=v3.1::Store.UnitTests.BooksControllerTests.Get_List_Of_Books_Should_Not_Be_Null_Return_ObjectResult_And_200_StatusCode_When_Called&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::D58D6FE2-A85D-402A-8F48-671BCDA14595::.NETCoreApp,Version=v3.1::Store.UnitTests.BooksControllerTests.Get_List_Of_Books_Should_Return_ObjectResult_And_400_StatusCode_With_Null_Context&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8ef8de48_002Dd18c_002D4659_002D9f8e_002D77ced73dd5cf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Get_List_Of_Books_Should_Return_ObjectResult_And_400_StatusCode_With_Null_Context" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::D58D6FE2-A85D-402A-8F48-671BCDA14595::.NETCoreApp,Version=v3.1::Store.UnitTests.BooksControllerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

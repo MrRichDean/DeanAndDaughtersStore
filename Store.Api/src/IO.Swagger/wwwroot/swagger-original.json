@@ -1,0 +1,264 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Books API",
+    "description" : "API that manages a collection of books in a fictional store",
+    "contact" : {
+      "name" : "Lenus Health"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://localhost:5001/"
+  } ],
+  "paths" : {
+    "/books" : {
+      "get" : {
+        "summary" : "Returns a list of books. Sorted by title by default.",
+        "operationId" : "get-book",
+        "parameters" : [ {
+          "name" : "sortby",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "title", "author", "price" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Book"
+                  },
+                  "x-content-type" : "application/json"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Creates a new book",
+        "operationId" : "create-book",
+        "requestBody" : {
+          "description" : "A JSON object that represents a book.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Book"
+              },
+              "example" : {
+                "title" : "Journey to the Center of the Earth",
+                "author" : "Jules Verne",
+                "price" : 10.99
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Created",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_201"
+                },
+                "example" : {
+                  "id" : 4
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_400"
+                },
+                "example" : {
+                  "errors" : [ "Title is required" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books/{id}" : {
+      "get" : {
+        "summary" : "Gets a book by id",
+        "operationId" : "get-book-by-id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Book"
+                },
+                "example" : {
+                  "title" : "Journey to the Center of the Earth",
+                  "author" : "Jules Verne",
+                  "price" : 10.99
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Book not found"
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update an existing book",
+        "operationId" : "update-book-by-id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "A JSON object that represents a book.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Book"
+              },
+              "example" : {
+                "title" : "Journey to the Center of the Earth",
+                "author" : "Jules Verne",
+                "price" : 10.99
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_400"
+                },
+                "example" : {
+                  "errors" : [ "Title is required" ]
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Book not found"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Deletes a book by id",
+        "operationId" : "delete-book-by-id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Book not found"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Book" : {
+        "required" : [ "author", "price", "title" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64",
+            "readOnly" : true
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "author" : {
+            "type" : "string"
+          },
+          "price" : {
+            "type" : "number"
+          }
+        },
+        "example" : {
+          "id" : 4,
+          "title" : "Journey to the Center of the Earth",
+          "author" : "Jules Verne",
+          "price" : 10.99
+        }
+      },
+      "inline_response_201" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "description" : "Id of the created book.",
+            "format" : "int64"
+          }
+        },
+        "example" : {
+          "id" : 0
+        }
+      },
+      "inline_response_400" : {
+        "type" : "object",
+        "properties" : {
+          "errors" : {
+            "type" : "array",
+            "description" : "Error messages",
+            "items" : {
+              "type" : "object"
+            }
+          }
+        }
+      }
+    }
+  }
+}
