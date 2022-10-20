@@ -22,9 +22,10 @@ NuGetPackageManager >>> Package Manager Console and type "update-database"
 
 This should create the db. 
 Go to your new DeanAndDaughtersLtd db and open up a new query windown. 
-Copy the script within the SQL Scripts folder named "Create Database Table.sql" and run this query. Your book 
+Copy the script within the SQL Scripts folder named "Create Database Table.sql" and run this query. The "Books" table should now be present along with the sample data provided. 
 
 API
+- To be run in debug mode
 - Once you have cloned the repo, please go to C:\*YourGitHubRoot*\DeanAndDaughtersStore\Store.Api and run the Store.sln
 - To run the code, ensure all nuget packages have been correctly updated
 - Build the solution 
