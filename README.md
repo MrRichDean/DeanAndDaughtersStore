@@ -1,9 +1,9 @@
 #DeanAndDaughtersStore
 
 ASSUMPTIONS: 
-1. Users of the code can readily access and have permissions to SQL 
+1. Solution developed using Visual Studio 2022 and Microsoft SQL Server 2019. As such, any user wishing to run this should use at the same versions as a minimum.  
 2. I haven't used the Swagger "Generate Server" before but I went down that route as I thought it would get me as close to the spec as possible, which I would assume you would prefer over any alternative.
-3. Solution developed using Visual Studio 2022 and Microsoft SQL Server 2019. As such, any user wishing to run this should use at least the same versions.  
+
 
 Database Creation
 
