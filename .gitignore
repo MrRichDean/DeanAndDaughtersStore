@@ -201,3 +201,4 @@ Store.Api/Store.Entities/obj/Store.Entities.csproj.nuget.dgspec.json
 Store.Api/Store.Entities/obj/Store.Entities.csproj.nuget.g.props
 Store.Api/Store.Entities/obj/Store.Entities.csproj.nuget.g.targets
 *.BuildWithSkipAnalyzers
+Store.Api/.vs/Store/DesignTimeBuild/.dtbcache.v2

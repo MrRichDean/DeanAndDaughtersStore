@@ -1,4 +1,9 @@
-# DeanAndDaughtersStore
+#DeanAndDaughtersStore
+
+ASSUMPTIONS: 
+1. Users of the code can readily access and have permissions to SQL 
+2. I haven't used the Swagger "Generate Server" before but I went down that route as I thought it would get me as close to the spec as possible, which I would assume you would prefer over any alternative.
+3. Solution developed using Visual Studio 2022 and Microsoft SQL Server 2019. As such, any user wishing to run this should use at least the same versions.  
 
 Database Creation
 
@@ -17,9 +22,7 @@ NuGetPackageManager >>> Package Manager Console and type "update-database"
 
 This should create the db. 
 Go to your new DeanAndDaughtersLtd db and open up a new query windown. 
-Copy the script within the SQL Scripts folder named "Create Database Table.sql"
-
-
+Copy the script within the SQL Scripts folder named "Create Database Table.sql" and run this query. Your book 
 
 API
 - Once you have cloned the repo, please go to C:\*YourGitHubRoot*\DeanAndDaughtersStore\Store.Api and run the Store.sln
@@ -29,6 +32,3 @@ API
 - Hit F5 to run code, this should open a browser with the following url https://localhost:5001/swagger/index.html where you can use the api 
 - Alternatively, go to the Store.UnitTests project and run the BooksControllerTests tests 
 
-ASSUMPTIONS: 
-1. Users of the code can readily access and have permissions to SQL 
-2. I haven't used the Swagger "Generate Server" before but I went down that route as I thought it would get me as close to the spec as possible, which I would assume you would prefer over any alternative.
